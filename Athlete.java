@@ -21,15 +21,45 @@ public class Athlete
         x = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    // Psudocode for Athlete class
+    
+    // Variables:
+        // name
+        // age
+        // gender
+        // activities (list)
+
+    // Method initialize(name, age, gender):
+        // set this.name = name
+        // set this.age = age
+        // set this.gender = gender
+        // set activities to empty list
+
+    // Method performActivity(activity):
+        // add activity to activities
+
+    // Method getActivities():
+        // Return activities
+
+    // Method getTotalDistance():
+        // set totalDistance to 0
+        // for each activity in activities:
+            // add activity.distance to totalDistance
+        // Return totalDistance
+
+    // Method getBurnedCalories():
+        // set totalCalories to 0
+        // for each activity in activities:
+            // add activity.getCaloriesBurned() to totalCalories
+        // Return totalCalories
+
+    // Method getName():
+        // Return name
+
+    // Method getAge():
+        // Return age
+
+    // Method getGender():
+        // Return gender
     }
-}
+
