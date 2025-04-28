@@ -19,15 +19,16 @@ public class Activity
         x = 0;
     }
     
-    // public double getSpeed(){
+    // public string getSummary(){
+        //initializes summary as an empty string
         // Pseudocode
-           // if duaration > 0 then
-              // RETURN distance divided by duration
-           // Else
-              // RETURN 0
-           // END if
-        // END method
-    // }
+        // summary = ""
+        //
+        //summary = summary + "Date: " + format(date)
+        //summary = summary + ",Mode of transport: " + mode.toString()
+        //summary = summary + ",Distance covered: " + distance + "km"
+        //summary = summary + ",duration: " + duration + "hours"        
+        // return summary
 
     
 }
