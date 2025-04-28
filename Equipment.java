@@ -19,15 +19,20 @@ public class Equipment
         x = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    // name: for example,mountain bike or 100m sprint
+    // type: maybe bike, e-bike, etc
+    
+    // Variables:
+        // name
+        // type
+
+    // Method initialize(name, type):
+        // set this.name = name
+        // set this.type = type
+
+    // Method getName():
+        // Return name
+
+    // Method getType():
+        // Return type
 }
