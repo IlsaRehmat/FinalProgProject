@@ -7,5 +7,5 @@
  */
 public enum ModeOfTransport
 {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    Male, Female, Other
 }
