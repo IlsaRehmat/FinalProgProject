@@ -7,5 +7,5 @@
  */
 public enum ModeOfTransport
 {
-    Male, Female, Other
+    WALKING, RUNNING, BIKING, EBIKING, ROLLERBLADING, SWIMMING
 }
