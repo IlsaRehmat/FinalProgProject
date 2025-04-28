@@ -1,21 +1,19 @@
-import java.util.List;
 
 /**
- * Write a description of class Athlete here.
+ * Write a description of class PoweredActivity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Athlete
+public class PoweredActivity extends Activity
 {
     // instance variables - replace the example below with your own
     private int x;
-    private List<Activity> activities;
-    private Gender gender;
+    private Equipment equipment;
     /**
-     * Constructor for objects of class Athlete
+     * Constructor for objects of class PoweredActivity
      */
-    public Athlete()
+    public PoweredActivity()
     {
         // initialise instance variables
         x = 0;

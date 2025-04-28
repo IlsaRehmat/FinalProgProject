@@ -9,7 +9,7 @@ public class Activity
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    private ModeOfTransport mode;
     /**
      * Constructor for objects of class Activity
      */

@@ -1,21 +1,19 @@
-import java.util.List;
 
 /**
- * Write a description of class Athlete here.
+ * Write a description of class RegularActivity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Athlete
+public class RegularActivity extends Activity
 {
     // instance variables - replace the example below with your own
     private int x;
-    private List<Activity> activities;
-    private Gender gender;
+
     /**
-     * Constructor for objects of class Athlete
+     * Constructor for objects of class RegularActivity
      */
-    public Athlete()
+    public RegularActivity()
     {
         // initialise instance variables
         x = 0;
