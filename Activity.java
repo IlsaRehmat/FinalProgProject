@@ -30,5 +30,10 @@ public class Activity
         //summary = summary + ",duration: " + duration + "hours"        
         // return summary
 
-    
+    //public double getCaloriesBurned(){
+        //initializes calories as 0
+        
+        //set calories = distance * 50
+        
+        //Return calories
 }
