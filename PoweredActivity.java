@@ -23,30 +23,26 @@ public class PoweredActivity extends Activity
     
     // equipment: String 
     
-    //  CONSTRUCTOR PoweredActivity(mode: String, distance: float, duration:
-    //  SET self.mode = mode
-    //  SET self.distance = distance
-    //    SET self.duration = duration
-     //   SET self.equipment = equipment
-    //END CONSTRUCTOR
+    //  Constructor PoweredActivity(mode: String, distance: float, duration:
+    //  set self.mode = mode
+    //  set self.distance = distance
+    //  set self.duration = duration
+    //  set self.equipment = equipment
     
-    //METHOD getSpeed() RETURNS float
-    //    IF duration > 0 THEN
-    //        RETURN distance / duration
     
-    //ELSE
-    //        PRINT "Invalid duration: cannot compute speed."
-    //        RETURN 0
-    //    END IF
-    //END METHOD
+    //Method getSpeed() Returns float
+    //  if duration > 0 then
+    //      Return distance / duration
+    //  else
+    //      Print "Invalid duration: cannot compute speed."
+    //      Return 0
 
-    //METHOD displayDetails()
-    //    PRINT "Powered Activity: " + mode
-    //   PRINT "Equipment Used: " + equipment
-    //    PRINT "Distance: " + distance + " km"
-    //    PRINT "Duration: " + duration + " hours"
-    //    PRINT "Speed: " + getSpeed() + " km/h"
-    // END METHOD
+    //Method displayDetails()
+    //  print "Powered Activity: " + mode
+    //  print "Equipment Used: " + equipment
+    //  print "Distance: " + distance + " km"
+    //  print "Duration: " + duration + " hours"
+    //  print "Speed: " + getSpeed() + " km/h"
 
 
     /**
