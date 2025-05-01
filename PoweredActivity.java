@@ -21,7 +21,7 @@ public class PoweredActivity extends Activity
     
     // pseudocode for Powered activity
     
-    // equipment: String 
+    // equipment: import equipment class 
     
     //  Constructor PoweredActivity(mode: String, distance: float, duration:
     //  set self.mode = mode
