@@ -58,9 +58,7 @@ public class Athlete
     }
     
     public String getGender(){
-        return gender;
-        
-
+        return gender.toString();
     }
 
     // Psudocode for Athlete class
