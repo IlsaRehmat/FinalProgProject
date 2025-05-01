@@ -21,7 +21,6 @@ public class Athlete
         this.name = name;
         this.age = age;
         this.gender = gender;
-        
     }
     
     public void performActivity(Activity activity){
@@ -59,9 +58,7 @@ public class Athlete
     }
     
     public String getGender(){
-        return gender;
-        
-
+        return gender.toString();
     }
 
     // Psudocode for Athlete class
