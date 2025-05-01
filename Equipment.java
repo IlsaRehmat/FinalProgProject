@@ -20,7 +20,7 @@ public class Equipment
     }
 
     // name: for example,mountain bike or tours de france
-    // type: bike
+    // type: bike,etc..
     
     // Variables:
         // name
