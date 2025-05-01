@@ -9,7 +9,8 @@ import java.util.List;
 public class Athlete
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String name;
+    private int age;
     private List<Activity> activities;
     private Gender gender;
     /**
@@ -17,8 +18,14 @@ public class Athlete
      */
     public Athlete()
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        
+    }
+    
+    public void performActivity(Activity){
+        
     }
 
     // Psudocode for Athlete class

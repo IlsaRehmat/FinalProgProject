@@ -7,16 +7,24 @@
  */
 public class Equipment
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String name;
+    private String type;
 
     /**
      * Constructor for objects of class Equipment
      */
-    public Equipment()
+    public Equipment(String name, String type)
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.type = type;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String getType(){
+        return type;
     }
 
     // name: for example,mountain bike or 100m sprint
