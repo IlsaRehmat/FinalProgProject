@@ -8,7 +8,6 @@ import java.util.Scanner;
  */
 public class Athlete
 {
-    // instance variables - replace the example below with your own
     private String name;
     private int age;
     private List<Activity> activities;
