@@ -60,6 +60,7 @@ public class Athlete
     
     public String getGender(){
         return gender;
+
     }
 
     // Psudocode for Athlete class

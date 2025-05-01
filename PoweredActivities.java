@@ -5,7 +5,7 @@
  * @author (your name here)
  * @version (version number or date here)
  */
-public enum ModeOfTransport
+public enum PoweredActivities
 {
-    WALKING, RUNNING, BIKING, EBIKING, ROLLERBLADING, SWIMMING
+     BIKING, ROLLERBLADING, JUMPROPE, HULAHOOP
 }
