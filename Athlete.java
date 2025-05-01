@@ -24,8 +24,42 @@ public class Athlete
         
     }
     
-    public void performActivity(Activity){
-        
+    public void performActivity(Activity activity){
+        activities.add(activity);
+    }
+    
+    public List<Activity> getActivities(){
+        return activities;
+    }
+    
+    public double getTotalDistance(){
+        int activityDistance = 0;
+        double totalDistance = 0;
+        for(Activity activity : activities){
+            totalDistance = activityDistance;
+        }
+        return totalDistance;
+    }
+    
+    public double getBurnedCalories(){
+        int activityCaloriesBurned = 0;
+        double totalCalories = 0;
+        for(Activity activity : activities){
+            totalCalories = activityCaloriesBurned;
+        }
+        return totalCalories;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getAge(){
+        return age;
+    }
+    
+    public String getGender(){
+        return gender;
     }
 
     // Psudocode for Athlete class
