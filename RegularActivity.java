@@ -9,7 +9,7 @@ public class RegularActivity extends Activity
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    private RegularActivities mode;
     /**
      * Constructor for objects of class RegularActivity
      */

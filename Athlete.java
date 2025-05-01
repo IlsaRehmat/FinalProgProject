@@ -24,7 +24,7 @@ public class Athlete
         
     }
     
-    public void performActivity(Activity){
+    public void performActivity(Activity activity){
         
     }
 
