@@ -19,8 +19,8 @@ public class Equipment
         x = 0;
     }
 
-    // name: for example,mountain bike or 100m sprint
-    // type: maybe bike, e-bike, etc
+    // name: for example,mountain bike or tours de france
+    // type: bike
     
     // Variables:
         // name
