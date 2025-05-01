@@ -21,7 +21,6 @@ public class Athlete
         this.name = name;
         this.age = age;
         this.gender = gender;
-        
     }
     
     public void performActivity(Activity activity){
