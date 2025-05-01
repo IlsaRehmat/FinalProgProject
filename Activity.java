@@ -18,6 +18,7 @@ public class Activity
         x = 0;
     }
     
+    
     // public string getSummary(){
         //initializes summary as an empty string
         // Pseudocode
