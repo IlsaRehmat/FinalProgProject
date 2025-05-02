@@ -16,8 +16,8 @@ public class DriverApp
         Equipment rollerblades = new Equipment("Inline Skates", "Rollerblades");
         
         //Create athletes
-        Athlete saad = new Athlete("Saad", 19, Gender.MALE);
-        Athlete ilsa = new Athlete("Ilsa", 18, Gender.FEMALE);
+        Athlete saad = new Athlete("Saad", 20, Gender.MALE);
+        Athlete ilsa = new Athlete("Ilsa", 17, Gender.FEMALE);
         Athlete nicolas = new Athlete("Nicolas", 19, Gender.MALE);
         
         //Create activities
@@ -36,6 +36,17 @@ public class DriverApp
         ilsa.performActivity(swim1);
         ilsa.performActivity(eBike1);
         
-        nicolas.performActivity(
+        nicolas.performActivity(run1);
+        nicolas.performActivity(skate1);
+        
+        //Store all athletes in a list
+        List<Athlete> athletes = Arrays.asList(saad, ilsa, nicolas);
+        
+        //Print all athletes
+        System.out.println("\n--- Athletes ---");
+        for(Athlete athlete : athletes){
+            System.out.println(athlete);
+        }
+        
     }
 }
