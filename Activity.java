@@ -1,22 +1,40 @@
-
+import java.util.Date;
 /**
  * Write a description of class Activity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Activity
+public abstract class Activity
 {
-    // instance variables - replace the example below with your own
-    private int x;
-    /**
+    protected double distance;
+    protected double duration;
+    protected Date date;
+    protected ModeOfTransport mode;
+        /**
      * Constructor for objects of class Activity
      */
-    public Activity()
+    public Activity(double distance, double duration, Date date, ModeOfTransport mode)
     {
-        // initialise instance variables
-        x = 0;
+        this.distance = distance;
+        this.duration = duration;
+        this.date = date;
+        this.mode = mode;
     }
+    
+    public abstract String getSummary();
+    
+    public abstract String getCaloriesBurned();
+    
+    public double getDistance(){
+        return distance;
+    }
+    
+    public ModeOfTransport getMode(){
+        return mode;
+    }
+        
+}
     
     
     // public string getSummary(){
@@ -36,4 +54,4 @@ public class Activity
         //set calories = distance * 50
         
         //Return calories
-}
+

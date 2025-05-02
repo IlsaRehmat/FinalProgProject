@@ -1,5 +1,5 @@
 import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList;
 /**
  * Write a description of class Athlete here.
  *
@@ -12,7 +12,6 @@ public class Athlete
     private int age;
     private List<Activity> activities;
     private Gender gender;
-    private Person Person;
     /**
      * Constructor for objects of class Athlete
      */
@@ -21,6 +20,7 @@ public class Athlete
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.activities = new ArrayList<>();
     }
     
     public void performActivity(Activity activity){
@@ -49,17 +49,6 @@ public class Athlete
         return totalCalories;
     }
     
-    public String getName(){
-        return name;
-    }
-    
-    public int getAge(){
-        return age;
-    }
-    
-    public String getGender(){
-        return gender.toString();
-    }
     
     // public Person(String name, int age, Gender gender) {
         // this.name = name;
@@ -70,7 +59,7 @@ public class Athlete
     // public String getGender() {
         // return gender.toString();
     // }
-    }
+}
 
 
     // Psudocode for Athlete class

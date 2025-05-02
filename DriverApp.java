@@ -1,0 +1,41 @@
+import java.util.*;
+/**
+ * Write a description of class DriverApp here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class DriverApp
+{
+    public static void main(String[] args){
+        System.out.println("Welcome to the Athlete Activity Tracker!");
+        
+        //Create equipment
+        Equipment bike = new Equipment("Mountain Bike", "Bicycle");
+        Equipment eBike = new Equipment("Electric Cruiser", "E-Bike");
+        Equipment rollerblades = new Equipment("Inline Skates", "Rollerblades");
+        
+        //Create athletes
+        Athlete saad = new Athlete("Saad", 19, Gender.MALE);
+        Athlete ilsa = new Athlete("Ilsa", 18, Gender.FEMALE);
+        Athlete nicolas = new Athlete("Nicolas", 19, Gender.MALE);
+        
+        //Create activities
+        Activity walk1 = new RegularActivity(3.5, 1.0, new Date(), ModeOfTransport.WALKING);
+        Activity swim1 = new RegularActivity(2.0, 0.75, new Date(), ModeOfTransport.SWIMMING);
+        Activity run1 = new RegularActivity(5.0, 0.9, new Date(), ModeOfTransport.RUNNING);
+        
+        Activity bike1 = new PoweredActivity(15.0, 1.2, new Date(), ModeOfTransport.BIKING, bike);
+        Activity eBike1 = new PoweredActivity(25.0, 1.0, new Date(), ModeOfTransport.E_BIKING, eBike);
+        Activity skate1= new PoweredActivity(8.0, 0.6, new Date(), ModeOfTransport.ROLLERBLADING, rollerblades);
+        
+        //Assign activities to athletes
+        saad.performActivity(walk1);
+        saad.performActivity(bike1);
+        
+        ilsa.performActivity(swim1);
+        ilsa.performActivity(eBike1);
+        
+        nicolas.performActivity(
+    }
+}

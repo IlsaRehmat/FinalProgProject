@@ -10,7 +10,6 @@ public class PoweredActivity extends Activity
     // instance variables - replace the example below with your own
     private int x;
     private Equipment equipment;
-    private PoweredActivities mode;
     /**
      * Constructor for objects of class PoweredActivity
      */
