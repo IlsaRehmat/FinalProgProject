@@ -26,6 +26,11 @@ public class Equipment
     public String getType(){
         return type;
     }
+    
+    @Override
+    public String toString() {
+        return name + " (" + type + ")";
+    }
 
     // name: for example,mountain bike or tours de france
     // type: bike,etc..

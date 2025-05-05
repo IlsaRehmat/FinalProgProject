@@ -48,5 +48,33 @@ public class DriverApp
             System.out.println(athlete);
         }
         
+        // Print all activities
+        System.out.println("\n--- All Activities ---");
+        for (Athlete athlete : athletes) {
+            for (Activity activity : athlete.getActivities()) {
+                System.out.println(athlete.getName() + ": " + activity.getSummary());
+            }
+        }
+
+        // Filter and print activities by a specific mode (e.g., BIKING)
+        ModeOfTransport filterMode = ModeOfTransport.BIKING;
+        System.out.println("\n--- Activities filtered by mode (" + filterMode + ") ---");
+        for (Athlete athlete : athletes) {
+            for (Activity activity : athlete.getActivities()) {
+                if (activity.getMode() == filterMode) {
+                    System.out.println(athlete.getName() + ": " + activity.getSummary());
+                }
+            }
+        }
+
+        // Print total distance and calories per athlete
+        System.out.println("\n--- Stats per Athlete ---");
+        for (Athlete athlete : athletes) {
+            double totalDistance = athlete.getTotalDistance();
+            double totalCalories = athlete.getBurnedCalories();
+            System.out.println(athlete.getName() + ": Total Distance = " + totalDistance + " km, Calories Burned = " + totalCalories + " kcal");
+        }
     }
+    
+    
 }
