@@ -10,8 +10,8 @@ public class Athlete
 {
     private String name;
     private int age;
-    private List<Activity> activities;
     private Gender gender;
+    private List<Activity> activities;
     /**
      * Constructor for objects of class Athlete
      */
@@ -58,6 +58,7 @@ public class Athlete
     public Gender getGender(){
         return gender;
     }
+    
     @Override
     public String toString() {
         return name + " (" + age + ", " + gender + ")";

@@ -10,6 +10,40 @@ public class DriverApp
     public static void main(String[] args){
         System.out.println("Welcome to the Athlete Activity Tracker!");
         
+         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Athlete Activity Tracker!");
+
+        // Prompt for user input
+        System.out.print("Enter athlete's name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter athlete's age: ");
+        int age = -1;
+        try {
+            age = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid age. Exiting.");
+            return;
+        }
+
+        System.out.print("Enter athlete's gender (MALE, FEMALE, OTHER): ");
+        String genderInput = scanner.nextLine().toUpperCase();
+        Gender gender;
+        try {
+            gender = Gender.valueOf(genderInput);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid gender. Exiting.");
+            return;
+        }
+
+        // Create the athlete using user input
+        Athlete userAthlete = new Athlete(name, age, gender);
+        System.out.println("\nCreated athlete: " + userAthlete);
+
+        // You can now add activities or continue with rest of the app...
+        // Example: userAthlete.performActivity(...);
+    
         //Create equipment
         Equipment bike = new Equipment("Mountain Bike", "Bicycle");
         Equipment eBike = new Equipment("Electric Cruiser", "E-Bike");
@@ -40,7 +74,11 @@ public class DriverApp
         nicolas.performActivity(skate1);
         
         //Store all athletes in a list
-        List<Athlete> athletes = Arrays.asList(saad, ilsa, nicolas);
+        List<Athlete> athletes = new ArrayList<>();
+        athletes.add(userAthlete); // add the one from input
+        athletes.add(saad);
+        athletes.add(ilsa);
+        athletes.add(nicolas);
         
         //Print all athletes
         System.out.println("\n--- Athletes ---");
