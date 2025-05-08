@@ -30,10 +30,17 @@ public abstract class Activity
         return distance;
     }
     
+    public double getDuration(){
+        return duration;
+    }
+    
+    public Date getDate(){
+        return date;
+    }
+    
     public ModeOfTransport getMode(){
         return mode;
     }
-        
 }
     
     

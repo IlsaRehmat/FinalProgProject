@@ -7,7 +7,8 @@ import java.util.Date;
  */
 public class PoweredActivity extends Activity {
     private Equipment equipment;
-
+    
+    
 
     
     // pseudocode for Powered activity

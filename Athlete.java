@@ -51,21 +51,17 @@ public class Athlete
         return name;
     }
     
+    public int getAge(){
+        return age;
+    }
+    
+    public Gender getGender(){
+        return gender;
+    }
     @Override
     public String toString() {
         return name + " (" + age + ", " + gender + ")";
     }
-    
-    
-    // public Person(String name, int age, Gender gender) {
-        // this.name = name;
-        // this.age = age;
-        // this.gender = gender;
-    // }
-
-    // public String getGender() {
-        // return gender.toString();
-    // }
 }
 
 
