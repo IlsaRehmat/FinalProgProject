@@ -8,7 +8,25 @@ import java.util.Date;
 public class PoweredActivity extends Activity {
     private Equipment equipment;
     
-    
+      public PoweredActivity(double distance, double duration, Date date, ModeOfTransport mode, Equipment equipment) {
+        super(distance, duration, date, mode);
+        this.equipment = equipment;
+    }
+
+    @Override
+    public double getCaloriesBurned() {
+        switch (mode) {
+            case BIKING: return distance * 40;
+            case E_BIKING: return distance * 20;
+            case ROLLERBLADING: return distance * 60;
+            default: return distance * 30;
+        }
+    }
+
+    @Override
+    public String getSummary() {
+        return mode + " with " + equipment.getName() + ": " + distance + " km in " + duration + " hrs on " + date;
+    }
 
     
     // pseudocode for Powered activity
