@@ -7,5 +7,5 @@
  */
 public enum ModeOfTransport
 {
-    WALKK
+    WALKING, RUNNING, BIKING, E_BIKING, ROLLERBLADING, SWIMMING
 }

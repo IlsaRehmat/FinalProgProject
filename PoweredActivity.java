@@ -1,10 +1,11 @@
-
+import java.util.Date;
 /**
  * Write a description of class PoweredActivity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
+//<<<<<<< HEAD
 //public class PoweredActivity extends Activity
 //{
     // instance variables - replace the example below with your own
@@ -35,6 +36,30 @@
         // initialise instance variables
         
     
+//=======
+//public class PoweredActivity extends Activity {
+   // private Equipment equipment;
+    
+     /// public PoweredActivity(double distance, double duration, Date date, ModeOfTransport mode, Equipment equipment) {
+     //   super(distance, duration, date, mode);
+     //   this.equipment = equipment;
+    //
+    //@Override
+    //public double getCaloriesBurned() {
+       //switch (mode) {
+       //     case BIKING: return distance * 40;
+      //      case E_BIKING: return distance * 20;
+       //     case ROLLERBLADING: return distance * 60;
+       //     default: return distance * 30;
+        //}
+    //}
+
+    //@Override
+   // public String getSummary() {
+        //return mode + " with " + equipment.getName() + ": " + distance + " km in " + duration + " hrs on " + date;
+    //}
+
+//>>>>>>> 57b468ffe66dd400f287dc075fa34c26e30dbec6
     
     // pseudocode for Powered activity
     
@@ -64,3 +89,7 @@
 
     
 
+//<<<<<<< HEAD
+//=======
+///}
+///>>>>>>> 57b468ffe66dd400f287dc075fa34c26e30dbec6

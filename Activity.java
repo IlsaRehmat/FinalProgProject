@@ -24,16 +24,23 @@ public abstract class Activity
     
     public abstract String getSummary();
     
-    public abstract String getCaloriesBurned();
+    public abstract double getCaloriesBurned();
     
     public double getDistance(){
         return distance;
     }
     
+    public double getDuration(){
+        return duration;
+    }
+    
+    public Date getDate(){
+        return date;
+    }
+    
     public ModeOfTransport getMode(){
         return mode;
     }
-        
 }
     
     

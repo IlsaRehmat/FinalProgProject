@@ -10,12 +10,12 @@ public class Athlete
 {
     private String name;
     private int age;
-    private List<Activity> activities;
     private Gender gender;
+    private List<Activity> activities;
     /**
      * Constructor for objects of class Athlete
      */
-    public Athlete()
+    public Athlete(String name, int age, Gender gender)
     {
         this.name = name;
         this.age = age;
@@ -32,33 +32,37 @@ public class Athlete
     }
     
     public double getTotalDistance(){
-        int activityDistance = 0;
-        double totalDistance = 0;
+        double totalDistance = 0.0;
         for(Activity activity : activities){
-            totalDistance = activityDistance;
+            totalDistance += activity.getDistance();
         }
         return totalDistance;
     }
     
     public double getBurnedCalories(){
-        int activityCaloriesBurned = 0;
-        double totalCalories = 0;
+        double totalCalories = 0.0;
         for(Activity activity : activities){
-            totalCalories = activityCaloriesBurned;
+            totalCalories += activity.getCaloriesBurned();
         }
         return totalCalories;
     }
     
+    public String getName() {
+        return name;
+    }
     
-    // public Person(String name, int age, Gender gender) {
-        // this.name = name;
-        // this.age = age;
-        // this.gender = gender;
-    // }
-
-    // public String getGender() {
-        // return gender.toString();
-    // }
+    public int getAge(){
+        return age;
+    }
+    
+    public Gender getGender(){
+        return gender;
+    }
+    
+    @Override
+    public String toString() {
+        return name + " (" + age + ", " + gender + ")";
+    }
 }
 
 
