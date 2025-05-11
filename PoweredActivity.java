@@ -5,19 +5,36 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class PoweredActivity extends Activity
-{
+//public class PoweredActivity extends Activity
+//{
     // instance variables - replace the example below with your own
-    private int x;
-    private Equipment equipment;
+    
+    //private Equipment equipment;
     /**
      * Constructor for objects of class PoweredActivity
      */
-    public PoweredActivity()
-    {
+    //public PoweredActivity(double distance, double duration, Data data, Equipment equipment) {
+    //    super(distance, duration, data, mode);
+    //    this.equipment = equipment;
+    
+    //}
+    
+    //@Override
+    //public String getSummary () {
+//return "Powered Activity: " + mode + " using " + equiment + " for" + ddistance + " km in " + duration + " hours.";
+//}
+
+////@Override
+////public double getCaloriesBurned () {
+////return distance * 40;
+////}
+////public Equipment getEquipment () {
+////return equipment;
+////}
+//}  
         // initialise instance variables
-        x = 0;
-    }
+        
+    
     
     // pseudocode for Powered activity
     
@@ -43,17 +60,7 @@ public class PoweredActivity extends Activity
     //  print "Distance: " + distance + " km"
     //  print "Duration: " + duration + " hours"
     //  print "Speed: " + getSpeed() + " km/h"
+    // 
 
+    
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
-}
