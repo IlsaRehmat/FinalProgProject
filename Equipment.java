@@ -32,20 +32,4 @@ public class Equipment
         return name + " (" + type + ")";
     }
 
-    // name: for example,mountain bike or tours de france
-    // type: bike,etc..
-    
-    // Variables:
-        // name
-        // type
-
-    // Method initialize(name, type):
-        // set this.name = name
-        // set this.type = type
-
-    // Method getName():
-        // Return name
-
-    // Method getType():
-        // Return type
 }
