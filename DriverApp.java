@@ -44,6 +44,7 @@ public class DriverApp {
             System.out.println("3. List all activities");
             System.out.println("4. Filter activities by mode");
             System.out.println("5. Show stats per athlete");
+            System.out.println("6. List all activities per athlete");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine();
@@ -59,10 +60,10 @@ public class DriverApp {
                     }
                     break;
                 case 3:
-                    System.out.println("\n--- All Activities ---");
-                    for (Athlete athlete : athletes) {
+                    System.out.println("\n--- All Activity Types ---");
+                        for (Athlete athlete : athletes) {
                         for (Activity activity : athlete.getActivities()) {
-                            System.out.println(athlete.getName() + ": " + activity.getSummary());
+                            System.out.println(activity.getMode());
                         }
                     }
                     break;
@@ -89,6 +90,15 @@ public class DriverApp {
                         System.out.println(athlete.getName() + ": Distance = " +
                                 athlete.getTotalDistance() + " km, Calories = " +
                                 athlete.getBurnedCalories() + " kcal");
+                    }
+                    break;
+                case 6:
+                    System.out.println("\n--- Activities Per Athlete ---");
+                    for(Athlete athlete : athletes){
+                        System.out.println(athlete.getName() + ":");
+                        for(Activity activity : athlete.getActivities()){
+                            System.out.println(" - " + activity.getSummary());
+                        }
                     }
                     break;
                 default:
