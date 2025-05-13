@@ -13,7 +13,7 @@ public class Activity {
         this.mode = mode;
     }
 
-    public String getSummary() {
+    public String toString() {
         return mode + ": " + distance + " km in " + duration + " hrs on " + date;
     }
 

@@ -79,7 +79,7 @@ public class DriverApp {
                             for (Athlete athlete : athletes) {
                                 for (Activity activity : athlete.getActivities()) {
                                     if (activity.getMode() == mode) {
-                                        System.out.println(athlete.getName() + ": " + activity.getSummary());
+                                        System.out.println(athlete.getName() + ": " + activity.toString());
                                     }
                                 }
                             }
@@ -105,7 +105,7 @@ public class DriverApp {
                     for (Athlete athlete : athletes) {
                         System.out.println(athlete.getName() + ":");
                         for (Activity activity : athlete.getActivities()) {
-                            System.out.println(" - " + activity.getSummary());
+                            System.out.println(" - " + activity.toString());
                         }
                     }
                     break;

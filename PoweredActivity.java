@@ -10,7 +10,7 @@ public class PoweredActivity extends Activity {
     }
 
     @Override
-    public String getSummary() {
+    public String toString() {
         return "Powered Activity: " + mode + " using " + equipment + " for " + distance + " km in " + duration + " hours.";
     }
 

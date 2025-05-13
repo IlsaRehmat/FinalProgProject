@@ -21,7 +21,7 @@ public class RegularActivity extends Activity {
    } 
 
     @Override
-    public String getSummary() {
+    public String toString() {
        return mode + ": " + distance + " km in " + duration + " hrs on " + date;
    }
 }
