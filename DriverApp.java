@@ -47,7 +47,7 @@ public class DriverApp {
             System.out.println("6. List all activities per athlete");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // consume newline
 
             switch (choice) {
                 case 1:
@@ -61,7 +61,7 @@ public class DriverApp {
                     break;
                 case 3:
                     System.out.println("\n--- All Activity Types ---");
-                        for (Athlete athlete : athletes) {
+                    for (Athlete athlete : athletes) {
                         for (Activity activity : athlete.getActivities()) {
                             System.out.println(activity.getMode());
                         }
@@ -70,20 +70,28 @@ public class DriverApp {
                 case 4:
                     System.out.println("Enter mode (WALKING, RUNNING, BIKING, E_BIKING, ROLLERBLADING, SWIMMING): ");
                     String inputMode = scanner.nextLine().toUpperCase();
-                    try {
-                        ModeOfTransport mode = ModeOfTransport.valueOf(inputMode);
-                        System.out.println("\n--- Activities for mode: " + mode + " ---");
-                        for (Athlete athlete : athletes) {
-                            for (Activity activity : athlete.getActivities()) {
-                                if (activity.getMode() == mode) {
-                                    System.out.println(athlete.getName() + ": " + activity.getSummary());
+
+                    boolean isValidMode = false;
+                    for (ModeOfTransport mode : ModeOfTransport.values()) {
+                        if (mode.name().equals(inputMode)) {
+                            isValidMode = true;
+                            System.out.println("\n--- Activities for mode: " + mode + " ---");
+                            for (Athlete athlete : athletes) {
+                                for (Activity activity : athlete.getActivities()) {
+                                    if (activity.getMode() == mode) {
+                                        System.out.println(athlete.getName() + ": " + activity.getSummary());
+                                    }
                                 }
                             }
+                            break;
                         }
-                    } catch (IllegalArgumentException e) {
+                    }
+
+                    if (!isValidMode) {
                         System.out.println("Invalid mode. Try again.");
                     }
                     break;
+
                 case 5:
                     System.out.println("\n--- Stats per Athlete ---");
                     for (Athlete athlete : athletes) {
@@ -94,9 +102,9 @@ public class DriverApp {
                     break;
                 case 6:
                     System.out.println("\n--- Activities Per Athlete ---");
-                    for(Athlete athlete : athletes){
+                    for (Athlete athlete : athletes) {
                         System.out.println(athlete.getName() + ":");
-                        for(Activity activity : athlete.getActivities()){
+                        for (Activity activity : athlete.getActivities()) {
                             System.out.println(" - " + activity.getSummary());
                         }
                     }
@@ -105,5 +113,7 @@ public class DriverApp {
                     System.out.println("Invalid choice. Please try again.");
             }
         }
+
+        scanner.close();
     }
 }
