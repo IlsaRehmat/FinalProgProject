@@ -63,5 +63,13 @@ public class Athlete
     public String toString() {
         return name + " (" + age + ", " + gender + ")";
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Athlete other = (Athlete) obj;
+        return this.name.equalsIgnoreCase(other.name);
+    }
 }
 
