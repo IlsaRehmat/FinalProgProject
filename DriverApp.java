@@ -6,8 +6,12 @@ public class DriverApp {
     private static final List<Equipment> equipmentList = new ArrayList<>();
     
     public static void main(String[] args) {
-        int choice = 0;
+        System.out.println("+--------------------------------------+");
+        System.out.println("        Welcome to Athlete Tracker      ");
+        System.out.println("   Keep moving, keep growing, keep up!  ");
+        System.out.println("+--------------------------------------+\n");
         
+        int choice;
         do {
             printMenu();
             choice = getIntInput("Enter your choice: ");
@@ -19,8 +23,9 @@ public class DriverApp {
                 case 4 -> listAllAthletes();
                 case 5 -> listAllActivities();
                 case 6 -> listActivitiesByAthlete();
-                case 7 -> calculateCaloriesBurnedByAthlete();
-                case 0 -> System.out.println(" Thank you for using the Athlete Tracker. Stay strong! ");
+                case 7 -> displayAthleteStatsForOne();
+                case 8 -> displayAthleteStatsForAll();
+                case 0 -> System.out.println(" Thank you for using the Athlete Tracker. Goodbye!! ");
                 default -> System.out.println("Invalid choice. Try again.");
             }
         } while (choice != 0);
@@ -34,7 +39,8 @@ public class DriverApp {
         System.out.println("4. List all athletes");
         System.out.println("5. List all activities");
         System.out.println("6. List activities by athlete");
-        System.out.println("7. Calculate burned calories by athlete");
+        System.out.println("7. List one athlete's stats");
+        System.out.println("8. List all athlete's stats");
         System.out.println("0. Exit");
     }
     
@@ -57,37 +63,131 @@ public class DriverApp {
         System.out.println("Athlete created.");
     }
     
+    private static void createActivity() {
+        System.out.println("Enter athlete name: ");
+        String name = scanner.nextLine();
+        Athlete athlete = findAthlete(name);
+        if (athlete == null) {
+            return;
+        }
+
+        System.out.println("Is activity powered? (yes/no): ");
+        boolean isPowered = scanner.nextLine().equalsIgnoreCase("yes");
+
+        System.out.println("Enter mode (WALKING, RUNNING, SWIMMING, BIKING, E_BIKING, ROLLERBLADING): ");
+        ModeOfTransport mode = ModeOfTransport.valueOf(scanner.nextLine().toUpperCase());
+
+        double distance = getDoubleInput("Enter distance(km): ");
+        double duration = getDoubleInput("Enter duration(hours): ");
+
+        Activity activity;
+        if (isPowered) {
+            System.out.println("Enter equipment name: ");
+            String eqName = scanner.nextLine();
+            Equipment eq = findEquipment(eqName);
+            if (eq == null) {
+                return;
+            }
+            activity = new PoweredActivity(distance, duration, new Date(), mode, eq);
+        } else {
+            activity = new RegularActivity(distance, duration, new Date(), mode);
+        }
+
+        athlete.performActivity(activity);
+        System.out.println("Activity added.");
+    }
+    
     private static void listAllAthletes() {
         System.out.println("--- All Athletes ---");
-        for (Athlete a : athletes) System.out.println(a);
+        for (Athlete a : athletes){
+            System.out.println(a);
+        }
     }
 
     private static void listAllActivities() {
-        for (Athlete a : athletes)
-            for (Activity act : a.getActivities())
+        for (Athlete a : athletes){
+            for (Activity act : a.getActivities()){
                 System.out.println(" " + act);
+            }
+        }
     }
 
     private static void listActivitiesByAthlete() {
         System.out.println("Enter athlete name: ");
         Athlete athlete = findAthlete(scanner.nextLine());
-        if (athlete != null)
-            for (Activity act : athlete.getActivities())
+        if (athlete != null){
+            for (Activity act : athlete.getActivities()){
                 System.out.println(act);
+            }
+        }
     }
 
-    private static void calculateCaloriesBurnedByAthlete() {
-        for (Athlete a : athletes)
-            System.out.println(a.getName() + ": " + a.getBurnedCalories() + " kcal");
+    private static void displayAthleteStatsForOne() {
+        System.out.println("Enter athlete name: ");
+        String name = scanner.nextLine();
+        Athlete athlete = findAthlete(name);
+    
+        if (athlete == null) {
+            System.out.println("Athlete not found.");
+            return;
+        }
+    
+        double totalDistance = 0;
+        double totalDuration = 0;
+        double totalCalories = athlete.getBurnedCalories();
+    
+        for (Activity activity : athlete.getActivities()) {
+            totalDistance += activity.getDistance();
+            totalDuration += activity.getDuration();
+        }
+    
+        System.out.println("\n--- Statistics for " + athlete.getName() + " ---");
+        System.out.println("Total Distance: " + totalDistance + " km");
+        System.out.println("Total Duration: " + totalDuration + " hours");
+        System.out.println("Calories Burned: " + totalCalories + " kcal");
     }
+
+    private static void displayAthleteStatsForAll() {
+        double totalDistanceAll = 0;
+        double totalDurationAll = 0;
+        double totalCaloriesAll = 0;
+    
+        System.out.println("\n--- All Athlete Statistics ---");
+    
+        for (Athlete athlete : athletes) {
+            double totalDistance = 0;
+            double totalDuration = 0;
+            double totalCalories = athlete.getBurnedCalories();
+    
+            for (Activity activity : athlete.getActivities()) {
+                totalDistance += activity.getDistance();
+                totalDuration += activity.getDuration();
+            }
+    
+            totalDistanceAll += totalDistance;
+            totalDurationAll += totalDuration;
+            totalCaloriesAll += totalCalories;
+    
+            System.out.println("\nAthlete: " + athlete.getName());
+            System.out.println(" - Total Distance: " + totalDistance + " km");
+            System.out.println(" - Total Duration: " + totalDuration + " hours");
+            System.out.println(" - Calories Burned: " + totalCalories + " kcal");
+        }
+    
+        System.out.println("\n--- Totals Across All Athletes ---");
+        System.out.println("Total Distance: " + totalDistanceAll + " km");
+        System.out.println("Total Duration: " + totalDurationAll + " hours");
+        System.out.println("Total Calories Burned: " + totalCaloriesAll + " kcal");
+    }
+
 
     private static Athlete findAthlete(String name) {
         for (Athlete a : athletes){
             if (a.getName().equalsIgnoreCase(name)){
                 return a;
             }
-            System.out.println("Athlete not found.");
         }
+        System.out.println("Athlete not found.");
         return null;
     }
     
@@ -118,8 +218,8 @@ public class DriverApp {
             if(e.getName().equalsIgnoreCase(name)){
                 return e;
             }
-            System.out.println("Equipment not found.");
         }
+        System.out.println("Equipment not found.");
         return null;
     }
 }
