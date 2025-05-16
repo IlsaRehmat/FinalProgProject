@@ -24,8 +24,6 @@ public class DriverApp {
                 default -> System.out.println("Invalid choice. Try again.");
             }
         } while (choice != 0);
-        
-        
     }
     
     private static void printMenu() {
@@ -40,8 +38,17 @@ public class DriverApp {
         System.out.println("0. Exit");
     }
     
+    private static void createEquipment(){
+        System.out.println("Enter equipment name: ");
+        String name = scanner.nextLine();
+        System.out.println("Enter equipment type: ");
+        String type = scanner.nextLine();
+        equipmentList.add(new Equipment(name, type));
+        System.out.println("Equipment created.");
+    }
+    
     private static void createAthlete() {
-        System.out.print("Enter athlete name: ");
+        System.out.println("Enter athlete name: ");
         String name = scanner.nextLine();
         int age = getIntInput("Enter age: ");
         System.out.print("Enter gender (MALE/FEMALE/OTHER): ");
@@ -49,7 +56,7 @@ public class DriverApp {
         athletes.add(new Athlete(name, age, gender));
         System.out.println("Athlete created.");
     }
-
+    
     private static void listAllAthletes() {
         System.out.println("--- All Athletes ---");
         for (Athlete a : athletes) System.out.println(a);
@@ -62,7 +69,7 @@ public class DriverApp {
     }
 
     private static void listActivitiesByAthlete() {
-        System.out.print("Enter athlete name: ");
+        System.out.println("Enter athlete name: ");
         Athlete athlete = findAthlete(scanner.nextLine());
         if (athlete != null)
             for (Activity act : athlete.getActivities())
@@ -75,10 +82,22 @@ public class DriverApp {
     }
 
     private static Athlete findAthlete(String name) {
-        for (Athlete a : athletes)
-            if (a.getName().equalsIgnoreCase(name)) return a;
-        System.out.println("Athlete not found.");
+        for (Athlete a : athletes){
+            if (a.getName().equalsIgnoreCase(name)){
+                return a;
+            }
+            System.out.println("Athlete not found.");
+        }
         return null;
     }
-
+    
+    private static Equipment findEquipment(String name){
+        for(Equipment e : equipmentList){
+            if(e.getName().equalsIgnoreCase(name)){
+                return e;
+            }
+            System.out.println("Equipment not found.");
+        }
+        return null;
+    }
 }
