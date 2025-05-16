@@ -91,6 +91,28 @@ public class DriverApp {
         return null;
     }
     
+     private static int getIntInput(String prompt) {
+        System.out.println(prompt);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Please enter a valid number. " + prompt);
+            scanner.next();
+        }
+        int num = scanner.nextInt();
+        scanner.nextLine(); 
+        return num;
+    }
+    
+    private static double getDoubleInput(String prompt) {
+        System.out.println(prompt);
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Please enter a valid number. " + prompt);
+            scanner.next();
+        }
+        double num = scanner.nextDouble();
+        scanner.nextLine(); 
+        return num;
+    }
+    
     private static Equipment findEquipment(String name){
         for(Equipment e : equipmentList){
             if(e.getName().equalsIgnoreCase(name)){
