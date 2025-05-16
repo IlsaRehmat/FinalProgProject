@@ -40,6 +40,45 @@ public class DriverApp {
         System.out.println("0. Exit");
     }
     
-    
-    
+    private static void createAthlete() {
+        System.out.print("Enter athlete name: ");
+        String name = scanner.nextLine();
+        int age = getIntInput("Enter age: ");
+        System.out.print("Enter gender (MALE/FEMALE/OTHER): ");
+        Gender gender = Gender.valueOf(scanner.nextLine().toUpperCase());
+        athletes.add(new Athlete(name, age, gender));
+        System.out.println("Athlete created.");
+    }
+
+    private static void listAllAthletes() {
+        System.out.println("--- All Athletes ---");
+        for (Athlete a : athletes) System.out.println(a);
+    }
+
+    private static void listAllActivities() {
+        for (Athlete a : athletes)
+            for (Activity act : a.getActivities())
+                System.out.println(" " + act);
+    }
+
+    private static void listActivitiesByAthlete() {
+        System.out.print("Enter athlete name: ");
+        Athlete athlete = findAthlete(scanner.nextLine());
+        if (athlete != null)
+            for (Activity act : athlete.getActivities())
+                System.out.println(act);
+    }
+
+    private static void calculateCaloriesBurnedByAthlete() {
+        for (Athlete a : athletes)
+            System.out.println(a.getName() + ": " + a.getBurnedCalories() + " kcal");
+    }
+
+    private static Athlete findAthlete(String name) {
+        for (Athlete a : athletes)
+            if (a.getName().equalsIgnoreCase(name)) return a;
+        System.out.println("Athlete not found.");
+        return null;
+    }
+
 }
