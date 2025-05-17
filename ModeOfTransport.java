@@ -1,9 +1,15 @@
 
 /**
- * Enumeration class ModeOfTransport - write a description of the enum class here
- *
- * @author (your name here)
- * @version (version number or date here)
+ * Enum representing valid types of transport for physical activities.
+ * These are used to categorize activities and determine calories burned.
+ * 
+ * Enum values:
+ * - WALKING
+ * - RUNNING
+ * - BIKING
+ * - E_BIKING
+ * - ROLLERBLADING
+ * - SWIMMING
  */
 public enum ModeOfTransport
 {

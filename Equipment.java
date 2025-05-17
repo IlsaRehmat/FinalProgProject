@@ -1,9 +1,7 @@
 
 /**
- * Write a description of class Equipment here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Represents a piece of equipment used in a powered activity.
+ * Each equipment has a name and a type (e.g., Bike, E-Scooter, Rollerblades).
  */
 public class Equipment
 {
@@ -11,7 +9,7 @@ public class Equipment
     private String type;
 
     /**
-     * Constructor for objects of class Equipment
+     * Constructs an Equipment object with a name and type.
      */
     public Equipment(String name, String type)
     {
@@ -19,14 +17,23 @@ public class Equipment
         this.type = type;
     }
     
+    /**
+     * returns the name of the equipment 
+     */
     public String getName(){
         return name;
     }
     
+    /**
+     * Returns the type of the equipment
+     */
     public String getType(){
         return type;
     }
     
+    /**
+     * Returns a string representation of the equipment.
+     */
     @Override
     public String toString() {
         return name + " (" + type + ")";
