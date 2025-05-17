@@ -1,10 +1,28 @@
 import java.util.*;
 
+/**
+ * The DriverApp class provides the main interface for the Athlete Tracker application.
+ * It allows users to create athletes, equipment, and activities, and to display
+ * statistics for all or individual athletes.
+ *
+ * This is a console-based menu-driven program.
+ * 
+ * Features include:
+ * - Creating equipment and athletes
+ * - Logging powered and regular activities
+ * - Listing all athletes and activities
+ * - Viewing athlete statistics
+ */
 public class DriverApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final List<Athlete> athletes = new ArrayList<>();
     private static final List<Equipment> equipmentList = new ArrayList<>();
     
+    
+    /**
+     * Main method to run the application
+     * 
+     */
     public static void main(String[] args) {
         System.out.println("+--------------------------------------+");
         System.out.println("        Welcome to Athlete Tracker      ");
@@ -31,6 +49,9 @@ public class DriverApp {
         } while (choice != 0);
     }
     
+    /**
+     * Prints the main menu to the console.
+     */
     private static void printMenu() {
         System.out.println("\n--- Athlete Activity Tracker ---");
         System.out.println("1. Create an equipment");
@@ -44,6 +65,9 @@ public class DriverApp {
         System.out.println("0. Exit");
     }
     
+    /**
+     * Prompts the user to create a new equipment item.
+     */
     private static void createEquipment(){
         System.out.println("Enter equipment name: ");
         String name = scanner.nextLine();
@@ -53,6 +77,9 @@ public class DriverApp {
         System.out.println("Equipment created.");
     }
     
+    /**
+     * Prompts the user to create a new athlete.
+     */
     private static void createAthlete() {
         System.out.println("Enter athlete name: ");
         String name = scanner.nextLine();
@@ -63,6 +90,9 @@ public class DriverApp {
         System.out.println("Athlete created.");
     }
     
+    /**
+     *  Prompts the user to log a new activity for an existing athlete.
+     */
     private static void createActivity() {
         System.out.println("Enter athlete name: ");
         String name = scanner.nextLine();
@@ -97,6 +127,9 @@ public class DriverApp {
         System.out.println("Activity added.");
     }
     
+    /**
+     * Lists all registered athletes.
+     */
     private static void listAllAthletes() {
         System.out.println("--- All Athletes ---");
         for (Athlete a : athletes){
@@ -104,6 +137,9 @@ public class DriverApp {
         }
     }
 
+    /**
+     * Lists all activities across all athletes.
+     */
     private static void listAllActivities() {
         for (Athlete a : athletes){
             for (Activity act : a.getActivities()){
@@ -112,6 +148,9 @@ public class DriverApp {
         }
     }
 
+    /**
+     * Lists activities performed by a specific athlete.
+     */
     private static void listActivitiesByAthlete() {
         System.out.println("Enter athlete name: ");
         Athlete athlete = findAthlete(scanner.nextLine());
@@ -122,6 +161,9 @@ public class DriverApp {
         }
     }
 
+    /**
+     * Displays statistics (distance, duration, calories) for a single athlete.
+     */
     private static void displayAthleteStatsForOne() {
         System.out.println("Enter athlete name: ");
         String name = scanner.nextLine();
@@ -147,6 +189,9 @@ public class DriverApp {
         System.out.println("Calories Burned: " + totalCalories + " kcal");
     }
 
+    /**
+     * Displays statistics for all athletes collectively.
+     */
     private static void displayAthleteStatsForAll() {
         double totalDistanceAll = 0;
         double totalDurationAll = 0;
@@ -180,7 +225,9 @@ public class DriverApp {
         System.out.println("Total Calories Burned: " + totalCaloriesAll + " kcal");
     }
 
-
+    /**
+     * Finds an Athlete by name.
+     */
     private static Athlete findAthlete(String name) {
         for (Athlete a : athletes){
             if (a.getName().equalsIgnoreCase(name)){
@@ -191,6 +238,9 @@ public class DriverApp {
         return null;
     }
     
+    /**
+     * Reads an integer input from the user with validation.
+     */
      private static int getIntInput(String prompt) {
         System.out.println(prompt);
         while (!scanner.hasNextInt()) {
@@ -202,6 +252,9 @@ public class DriverApp {
         return num;
     }
     
+    /**
+     * Reads a double input from the user with validation.
+     */
     private static double getDoubleInput(String prompt) {
         System.out.println(prompt);
         while (!scanner.hasNextDouble()) {
@@ -213,6 +266,9 @@ public class DriverApp {
         return num;
     }
     
+    /**
+     * Finds equipment by name.
+     */
     private static Equipment findEquipment(String name){
         for(Equipment e : equipmentList){
             if(e.getName().equalsIgnoreCase(name)){
