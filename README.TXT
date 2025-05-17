@@ -1,8 +1,4 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
+
 
 PROJECT TITLE: Social network for athletes
 
@@ -13,7 +9,9 @@ statistics like distance traveled and calories burned.
 The project demonstrates object-oriented programming concepts such as 
 inheritance, encapsulation, abstraction, and basic data processing with Java.
 
-VERSION or DATE: 28 April 2025
+VERSION or DATE: 
+Version 1.0
+28 April 2025
 
 HOW TO START THIS PROJECT: 
 Make the UML Diagram first
@@ -31,4 +29,28 @@ Ilsa
 Saad
 Nicolas
 
-.
+Final version:
+17 may 2025
+
+How to run this project:
+
+Inside blue j:
+1. Open the DriverApp class
+2. Right click on driverapp then clikc void main(String[] args) then press ok
+3. Use the menu to interact with the program
+
+Outside blue j:
+
+Terminal or Git bash
+
+1. Open a terminal or Git Bash
+2. Navigate to the project folder:
+   Example:
+   cd path/to/your/folder
+3. Compile all the source files: javac *.java
+4. Run the main class: java DriverApp
+
+You should see the main menu displayed in your terminal.
+
+
+
